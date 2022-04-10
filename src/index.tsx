@@ -4,20 +4,21 @@ import './index.css';
 import Home from './Home';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import combinedReducer from './reducers/combinedReducer';
+import thunk from 'redux-thunk';
 
-// export const store = createStore(
-//   combinedReducer
-//   // composeWithDevTools(applyMiddleware(ServerMiddleware)) // middleware
-// );
+export const store = createStore(
+  combinedReducer,
+  composeWithDevTools(applyMiddleware(thunk)) // middleware
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    <Home />
-    {/* </Provider> */}
+    <Provider store={store}>
+      <Home />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

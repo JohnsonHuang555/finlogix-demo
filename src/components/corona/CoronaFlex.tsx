@@ -1,29 +1,10 @@
 import styled from 'styled-components';
 
-export enum FlexJustifyContent {
-  Start = 'flex-start',
-  Center = 'center',
-  End = 'flex-end',
-  Between = 'space-between',
-}
-
-export enum FlexAlignItems {
-  Start = 'flex-start',
-  Center = 'center',
-  End = 'flex-end',
-  Between = 'space-between',
-}
-
-export enum FlexDirection {
-  Column = 'column',
-  Row = 'row',
-}
-
 type CoronaFlexProps = {
   children: React.ReactNode;
-  flexJustifyContent?: FlexJustifyContent;
-  flexDirection?: FlexDirection;
-  flexAlignItems?: FlexAlignItems;
+  flexJustifyContent?: 'flex-start' | 'center' | 'flex-end' | 'space-between';
+  flexDirection?: 'column' | 'row';
+  flexAlignItems?: 'flex-start' | 'center' | 'flex-end';
 };
 
 const FlexWrap = styled.div<CoronaFlexProps>`
@@ -36,9 +17,9 @@ const FlexWrap = styled.div<CoronaFlexProps>`
 const CoronaFlex = (props: CoronaFlexProps) => {
   const {
     children,
-    flexJustifyContent = FlexJustifyContent.Start,
-    flexAlignItems = FlexAlignItems.Start,
-    flexDirection = FlexDirection.Row,
+    flexJustifyContent = 'flex-start',
+    flexAlignItems = 'flex-start',
+    flexDirection = 'row',
   } = props;
 
   return (

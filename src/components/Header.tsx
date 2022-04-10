@@ -1,7 +1,4 @@
-import CoronaFlex, {
-  FlexAlignItems,
-  FlexJustifyContent,
-} from './corona/CoronaFlex';
+import CoronaFlex from './corona/CoronaFlex';
 import styled from 'styled-components';
 import CoronaContainer from './corona/CoronaContainer';
 import CoronaButton from './corona/CoronaButton';
@@ -17,11 +14,8 @@ const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
-    <HeaderWrap className="">
-      <CoronaFlex
-        flexJustifyContent={FlexJustifyContent.Between}
-        flexAlignItems={FlexAlignItems.Center}
-      >
+    <HeaderWrap>
+      <CoronaFlex flexJustifyContent="space-between" flexAlignItems="center">
         <img src="/logo.png" alt="logo" height="80" />
         <CoronaFlex>
           {isLogin ? (

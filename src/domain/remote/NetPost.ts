@@ -1,0 +1,141 @@
+export type NetPost = {
+  id: number;
+  post_id: number;
+  user_id: number;
+  title: string;
+  content: string;
+  symbol_id: number;
+  chart_data: any;
+  time_type: string;
+  slug: string;
+  post_directions: string;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+  symbols: string[];
+  tags: string[];
+  view_count: number;
+  share_count: number;
+  like_count: number;
+  favourite_count: number;
+  comment_count: number;
+  liked: boolean;
+  favourited: boolean;
+  analysis_url: string;
+  like_reaction_count: LikeReactionCount;
+  snapshot_url: string;
+  strategy_status: number;
+  closed_pip: string | null;
+  base_post: BasePost;
+  author: Author;
+  strategies: Strategy[];
+  like_pivots: [];
+  favourite_pivots: [];
+  stat: Stat;
+};
+
+type LikeReactionCount = {
+  all: number;
+  like: number;
+  insightful: number;
+  appreciate: number;
+  agree: number;
+  curious: number;
+};
+
+type BasePost = {
+  id: number;
+  user_id: number;
+  type: string;
+  deleted_at: string | null;
+  approved: number;
+  locale: string;
+  hot_pick: number;
+  pick: number;
+  pick_reason: null;
+  view_count: number;
+  mentions_id: string;
+  post_ids: string;
+};
+
+type Author = {
+  id: number;
+  unique_id: string;
+  s_unique_id: string | null;
+  name: string;
+  username: string;
+  phone_country: string | null;
+  phone_number: string | null;
+  email: string;
+  second_email: string | null;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+  avatar_url: string;
+  phone: string | null;
+  is_active: boolean;
+  profile: Profile;
+};
+
+type Profile = {
+  id: number;
+  user_id: number;
+  nick_name: string;
+  first_name: string;
+  last_name: string;
+  company_name: string | null;
+  country: string | null;
+  state: string | null;
+  city: string | null;
+  address: string | null;
+  zip_code: string | null;
+  website: string | null;
+  introduction: string | null;
+  social_media_account: string | null;
+  nickname_last_modified: string | null;
+  username_last_modified: string | null;
+  notification_last_unsubscribed: string | null;
+  registration_method: string;
+  locale: string;
+  last_ip_address: string;
+  last_login: string;
+  last_logout: string;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+  last_locale: string;
+  nick_name_lc: string;
+  lan: string;
+};
+
+type Strategy = {
+  id: number;
+  post_analysis_id: number;
+  symbol_id: number;
+  direction: string;
+  entry: string;
+  stop_loss: string;
+  take_profit: string;
+  risk_return: string;
+  publish_price: string;
+  open_at: string | null;
+  closed_at: string | null;
+  closed_key: string | null;
+  closed_pip: string | null;
+  status: number;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+};
+
+type Stat = {
+  id: number;
+  post_id: number;
+  view_count: number;
+  share_count: number;
+  like_count: number;
+  favourite_count: number;
+  comment_count: number;
+  created_at: string;
+  updated_at: string;
+};

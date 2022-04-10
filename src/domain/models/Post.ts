@@ -1,0 +1,141 @@
+export type Post = {
+  id: number;
+  postId: number;
+  userId: number;
+  title: string;
+  content: string;
+  symbolId: number;
+  chartData: any;
+  timeType: string;
+  slug: string;
+  postDirections: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+  symbols: string[];
+  tags: string[];
+  viewCount: number;
+  shareCount: number;
+  likeCount: number;
+  favouriteCount: number;
+  commentCount: number;
+  liked: boolean;
+  favourited: boolean;
+  analysisUrl: string;
+  likeReactionCount: LikeReactionCount;
+  snapshotUrl: string;
+  strategyStatus: number;
+  closedPip: string | null;
+  basePost: BasePost;
+  author: Author;
+  strategies: Strategy[];
+  likePivots: [];
+  favouritePivots: [];
+  stat: Stat;
+};
+
+type LikeReactionCount = {
+  all: number;
+  like: number;
+  insightful: number;
+  appreciate: number;
+  agree: number;
+  curious: number;
+};
+
+type BasePost = {
+  id: number;
+  userId: number;
+  type: string;
+  deletedAt: string | null;
+  approved: number;
+  locale: string;
+  hotPick: number;
+  pick: number;
+  pickReason: null;
+  viewCount: number;
+  mentionsId: string;
+  postIds: string;
+};
+
+type Author = {
+  id: number;
+  uniqueId: string;
+  sUniqueId: string | null;
+  name: string;
+  username: string;
+  phoneCountry: string | null;
+  phoneNumber: string | null;
+  email: string;
+  secondEmail: string | null;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+  avatarUrl: string;
+  phone: string | null;
+  isActive: boolean;
+  profile: Profile;
+};
+
+type Profile = {
+  id: number;
+  userId: number;
+  nickName: string;
+  firstName: string;
+  lastName: string;
+  companyName: string | null;
+  country: string | null;
+  state: string | null;
+  city: string | null;
+  address: string | null;
+  zipCode: string | null;
+  website: string | null;
+  introduction: string | null;
+  socialMediaAccount: string | null;
+  nicknameLastModified: string | null;
+  usernameLastModified: string | null;
+  notificationLastUnsubscribed: string | null;
+  registrationMethod: string;
+  locale: string;
+  lastIpAddress: string;
+  lastLogin: string;
+  lastLogout: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+  lastLocale: string;
+  nickNameLc: string;
+  lan: string;
+};
+
+type Strategy = {
+  id: number;
+  postAnalysisId: number;
+  symbolId: number;
+  direction: string;
+  entry: string;
+  stopLoss: string;
+  takeProfit: string;
+  riskReturn: string;
+  publishPrice: string;
+  openAt: string | null;
+  closedAt: string | null;
+  closedKey: string | null;
+  closedPip: string | null;
+  status: number;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string | null;
+};
+
+type Stat = {
+  id: number;
+  postId: number;
+  viewCount: number;
+  shareCount: number;
+  likeCount: number;
+  favouriteCount: number;
+  commentCount: number;
+  createdAt: string;
+  updatedAt: string;
+};
