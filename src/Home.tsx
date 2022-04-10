@@ -2,6 +2,10 @@ import Layout from './components/Layout';
 import styled from 'styled-components';
 import CoronaContainer from './components/corona/CoronaContainer';
 import CoronaFlex from './components/corona/CoronaFlex';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getPosts } from './actions/fetchActions';
+import { postsSelector } from './selectors/postSelector';
 
 const Banner = styled(CoronaContainer)`
   margin: 87px 0;
@@ -23,6 +27,15 @@ const PostList = styled(CoronaContainer)`
 `;
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const posts = useSelector(postsSelector);
+
+  useEffect(() => {
+    dispatch(getPosts);
+  }, []);
+
+  console.log(posts);
+
   return (
     <Layout>
       <Banner>

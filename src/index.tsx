@@ -17,6 +17,7 @@ export const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      {/* TODO: 如果多頁面這邊放 react-router */}
       <Home />
     </Provider>
   </React.StrictMode>,
