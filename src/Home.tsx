@@ -5,7 +5,8 @@ import CoronaFlex from './components/corona/CoronaFlex';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getPosts } from './actions/fetchActions';
-import { postsSelector } from './selectors/postSelector';
+import { unregisteredPostsSelector } from './selectors/postSelector';
+import PostCard from './components/PostCard';
 
 const Banner = styled(CoronaContainer)`
   margin: 87px 0;
@@ -28,13 +29,11 @@ const PostList = styled(CoronaContainer)`
 
 const Home = () => {
   const dispatch = useDispatch();
-  const posts = useSelector(postsSelector);
+  const posts = useSelector(unregisteredPostsSelector);
 
   useEffect(() => {
     dispatch(getPosts);
   }, []);
-
-  console.log(posts);
 
   return (
     <Layout>
@@ -52,7 +51,13 @@ const Home = () => {
           </div>
         </CoronaFlex>
       </Banner>
-      <PostList>123</PostList>
+      <PostList>
+        <CoronaFlex flexWrap="wrap" flexAlignItems="initial" gap="20px">
+          {posts.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </CoronaFlex>
+      </PostList>
     </Layout>
   );
 };
