@@ -1,4 +1,4 @@
-import styled, { CSSProperties } from 'styled-components';
+import styled from 'styled-components';
 
 type ButtonProps = Pick<CoronaButtonProps, 'variant'>;
 

@@ -37,6 +37,8 @@ const PostCardWrap = styled(CoronaFlex)`
     color: #6bb718;
     width: 100%;
     cursor: pointer;
+    font-weight: 900;
+    font-size: 16px;
     &::after {
       content: '>';
       width: 30px;
@@ -44,7 +46,7 @@ const PostCardWrap = styled(CoronaFlex)`
       border: 1px solid #6bb718;
       border-radius: 50%;
       text-align: center;
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 `;

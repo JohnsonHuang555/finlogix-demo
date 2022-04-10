@@ -7,6 +7,9 @@ import { useEffect } from 'react';
 import { getPosts } from './actions/fetchActions';
 import { unregisteredPostsSelector } from './selectors/postSelector';
 import PostCard from './components/PostCard';
+import CoronaSelect from './components/corona/CoronaSelect';
+import CoronaInput from './components/corona/CoronaInput';
+import CoronaGroup from './components/corona/CoronaGroup';
 
 const Banner = styled(CoronaContainer)`
   margin: 87px 0;
@@ -25,6 +28,33 @@ const PostList = styled(CoronaContainer)`
   padding-top: 80px;
   padding-bottom: 80px;
   background: #f2f2f2;
+`;
+
+const RegisterForm = styled(CoronaFlex)`
+  padding: 40px;
+  margin: 80px 0;
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 4px 14px rgba(132, 132, 132, 0.5);
+  border-radius: 20px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    .title {
+      color: #01254f;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .hint {
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.65);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
 `;
 
 const Home = () => {
@@ -58,6 +88,37 @@ const Home = () => {
           ))}
         </CoronaFlex>
       </PostList>
+      <CoronaContainer>
+        <RegisterForm
+          flexDirection="column"
+          flexJustifyContent="center"
+          flexAlignItems="center"
+        >
+          <div className="form">
+            <div className="title">Register for a Webinar now</div>
+            <div className="hint">
+              Please fill in the form below and you will be contacted by one of
+              our professional business experts.
+            </div>
+            <CoronaGroup>
+              <CoronaSelect
+                label="Topic"
+                options={[{ label: '123', value: '123' }]}
+                onChange={() => {}}
+              />
+            </CoronaGroup>
+            <CoronaGroup>
+              <CoronaInput label="First name" onChange={() => {}} />
+            </CoronaGroup>
+            <CoronaGroup>
+              <CoronaInput label="Last name" onChange={() => {}} />
+            </CoronaGroup>
+            <CoronaGroup>
+              <CoronaInput label="Email" onChange={() => {}} />
+            </CoronaGroup>
+          </div>
+        </RegisterForm>
+      </CoronaContainer>
     </Layout>
   );
 };
