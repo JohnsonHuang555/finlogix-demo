@@ -4,6 +4,7 @@ type ButtonProps = Pick<CoronaButtonProps, 'variant'>;
 
 // FIXME: 變數? 判斷顏色
 const Button = styled.div<ButtonProps>`
+  text-align: center;
   border-radius: 2px;
   padding: 10px 40px;
   border: 1.5px solid;
@@ -26,14 +27,15 @@ type CoronaButtonProps = {
   text: string;
   variant?: 'default' | 'outline';
   customStyles?: React.CSSProperties;
+  onClick: () => void;
 };
 
 const CoronaButton = (props: CoronaButtonProps) => {
-  const { text, variant = 'default', customStyles } = props;
+  const { text, variant = 'default', customStyles, onClick } = props;
 
   return (
-    <Button variant={variant} style={customStyles}>
-      <div>{text}</div>
+    <Button variant={variant} style={customStyles} onClick={() => onClick()}>
+      {text}
     </Button>
   );
 };

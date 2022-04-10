@@ -3,8 +3,12 @@ import CoronaFlex from './CoronaFlex';
 
 const CoronaInputWrap = styled(CoronaFlex)`
   width: 100%;
+  label {
+    font-size: 16px;
+    color: #4a4a4a;
+  }
   input {
-    width: 100%;
+    width: 98%;
   }
 `;
 

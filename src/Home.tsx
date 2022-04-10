@@ -10,6 +10,7 @@ import PostCard from './components/PostCard';
 import CoronaSelect from './components/corona/CoronaSelect';
 import CoronaInput from './components/corona/CoronaInput';
 import CoronaGroup from './components/corona/CoronaGroup';
+import CoronaButton from './components/corona/CoronaButton';
 
 const Banner = styled(CoronaContainer)`
   margin: 87px 0;
@@ -115,6 +116,9 @@ const Home = () => {
             </CoronaGroup>
             <CoronaGroup>
               <CoronaInput label="Email" onChange={() => {}} />
+            </CoronaGroup>
+            <CoronaGroup>
+              <CoronaButton text="Register" onClick={() => {}} />
             </CoronaGroup>
           </div>
         </RegisterForm>

@@ -23,11 +23,12 @@ const Header = () => {
               <CoronaButton
                 text="My Webinar"
                 customStyles={{ marginRight: '30px' }}
+                onClick={() => {}}
               />
-              <CoronaButton text="login" variant="outline" />
+              <CoronaButton text="login" variant="outline" onClick={() => {}} />
             </>
           ) : (
-            <CoronaButton text="login" variant="outline" />
+            <CoronaButton text="login" variant="outline" onClick={() => {}} />
           )}
         </CoronaFlex>
       </CoronaFlex>
